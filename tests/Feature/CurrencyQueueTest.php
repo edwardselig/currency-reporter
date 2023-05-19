@@ -19,11 +19,6 @@ class CurrencyQueueTest extends TestCase
         $this->user = $this->getUser();
     }
 
-    /**
-     * testList
-     *
-     * @return void
-     */
     public function testStoreOneYearOneMonth()
     {
         $this->actingAs($this->user)
@@ -58,11 +53,6 @@ class CurrencyQueueTest extends TestCase
             ->assertUnauthorized();
     }
 
-    /**
-     * testList
-     *
-     * @return void
-     */
     public function testStoreUnauthorized()
     {
         $this
@@ -73,11 +63,6 @@ class CurrencyQueueTest extends TestCase
             ->assertUnauthorized();
     }
 
-    /**
-     * testList
-     *
-     * @return void
-     */
     public function testStoreOneMonthOneDay()
     {
         $this->actingAs($this->user)

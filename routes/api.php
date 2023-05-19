@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CurrencyConverterController;
 use App\Http\Controllers\CurrencyQueueController;
-use Laravel\Sanctum\Http\Controllers\CsrfCookieController;
+use App\Http\Controllers\SignUpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,4 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
 });
 
-Route::group(['middleware' => 'web'], function () {
-    Route::get('/sanctum/csrf-cookie', [CsrfCookieController::class, 'show']);
-    //Route::post('/login', [LoginController::class, 'login']);
-});
+Route::post('/sign-up', [SignUpController::class, 'store']);
