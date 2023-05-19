@@ -4,8 +4,9 @@
 3. Insert a admin password into the .env `ADMIN_PASSWORD` field
 4. `composer install`
 5. `php artisan migrate`
-6. test with `php artisan test`
-7. `php artisan serve`
+6. type "yes" when asked Would you like to create a sqlite database file
+7. test with `php artisan test`
+8. `php artisan serve` to launch server
 
 #Manual testing
 ### Endpoints
