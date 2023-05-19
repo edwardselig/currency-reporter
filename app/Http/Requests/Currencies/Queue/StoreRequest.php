@@ -21,7 +21,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'report_uid' => 'required|string|exists:App\Models\CurrencyReportType,uid',
-            'currency' => 'required|string'
+            'currency' => 'required|string|exists:App\Models\Currency,abbreviation'
         ];
     }
 }

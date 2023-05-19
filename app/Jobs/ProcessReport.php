@@ -3,12 +3,10 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Repository\CurrencyConverterRepository;
 use App\Services\Interfaces\ReportGeneratorInterface;
 use App\Services\OneYearOneMonthReportGenerator;
 use App\Models\CurrencyReport;

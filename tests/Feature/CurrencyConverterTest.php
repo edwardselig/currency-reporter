@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\CurrencyConversion;
 use Tests\TestCase;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\Traits\HasAuthenticatedUser;
@@ -51,14 +52,26 @@ class CurrencyConverterTest extends TestCase
      */
     public function testConversions()
     {
+        $currencyConversion = CurrencyConversion::where('abbreviation_pair', '=', 'USDAED')->first();
+
         $this->actingAs($this->user)
             ->getJson('/api/currencies/conversions')
             ->assertOk()
             ->AssertJson(
                 fn (AssertableJson $json) =>
-                $json->has('USDGBP')
-                    ->etc()
+                $json->first(
+                    fn (AssertableJson $json2) =>
+                    $json2->first(
+                        fn (AssertableJson $innerJson) =>
+                        $innerJson->where('convertTo', 'AED')
+                            ->where('convertFrom', 'USD')
+                            ->where('abbreviationPair', 'USDAED')
+                            ->where('value', $currencyConversion->value)
+                            ->etc()
+                    )->etc()
+                )->etc()
             );
+        $this->assertNotEmpty($currencyConversion->value);
     }
 
     public function testConversionsUnauthorized()

@@ -50,6 +50,12 @@ abstract class ReportGenerator implements ReportGeneratorInterface
         return $out;
     }
 
+    /**
+     * return an array of quotes used for the report
+     */
     abstract protected function getQuotes(): array;
+    /**
+     * define how the interval should be recorded
+     */
     abstract protected function getInterval(Carbon $date): string;
 }

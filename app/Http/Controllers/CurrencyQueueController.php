@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\ProcessReport;
-use App\Models\CurrencyReportType;
 use App\Http\Requests\Currencies\Queue\StoreRequest;
 use App\Models\CurrencyReport;
 use App\Http\Resources\CurrencyReportResource;
