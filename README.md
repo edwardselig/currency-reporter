@@ -2,9 +2,10 @@
 1. `cp .env.example .env`
 2. Insert currencylayer api key into .env file `CURRENCY_LAYER_API_KEY` field in .env
 3. Insert a admin password into the .env `ADMIN_PASSWORD` field
-4. `php artisan migrate`
-5. test with `php artisan test`
-6. `php artisan serve`
+4. `composer install`
+5. `php artisan migrate`
+6. test with `php artisan test`
+7. `php artisan serve`
 
 #Manual testing
 ### Endpoints
