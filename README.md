@@ -7,6 +7,7 @@
 6. type "yes" when asked Would you like to create a sqlite database file
 7. test with `php artisan test`
 8. `php artisan serve` to launch server
+9. `php artisan queue:work --sleep=900` to set queue worker to process job every 15 minutes
 
 #Manual testing
 1. run `php artisan app:get-token` and copy the token printed to console
